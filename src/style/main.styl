@@ -1,5 +1,5 @@
 @import 'base/_b-style.styl'
-@import 'utilities/_variables.styl'
+@import 'utilities/_utilities.styl'
 
 body
   background: --grey
@@ -9,4 +9,23 @@ body
   color: --text-black
 
 h3
-  color: --text-red
+  title-article(--text-red, 17px)
+
+.nav-group
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+.header-menu
+  menu(15px)
+
+.header-nav-item
+  menu-item(--text-black, --text-red)
+
+.footer-menu
+  menu(15px)
+
+.footer-nav-item
+  menu-item(white, --text-red)
+
+

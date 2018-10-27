@@ -42,7 +42,7 @@ gulp.task('stylus', function(){
     }))
     .pipe(minify())
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('src/style/minCss'))
+    .pipe(gulp.dest('src/style'))
     // .pipe(reload({stream:true}))
     // .pipe(notify('Done! master killer code.'));
 });
