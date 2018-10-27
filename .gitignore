@@ -3,4 +3,3 @@ node_modules
 __MACOSX
 *.psd
 *.zip
-package-lock.json
