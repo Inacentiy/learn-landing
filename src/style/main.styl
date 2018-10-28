@@ -1,15 +1,9 @@
-@import 'base/_b-style.styl'
 @import 'utilities/_utilities.styl'
+@import 'base/_base.styl'
+@import 'layout/_layout.styl'
 
-body
-  background: --grey
-  margin:0
-  padding: 0
-  font-family: sans-serif
-  color: --text-black
-
-h3
-  title-article(--text-red, 17px)
+.wrapper-header
+  background: --o_white
 
 .nav-group
   display: flex;
@@ -22,10 +16,17 @@ h3
 .header-nav-item
   menu-item(--text-black, --text-red)
 
+footer
+  background: --o_black
+
 .footer-menu
   menu(15px)
 
 .footer-nav-item
   menu-item(white, --text-red)
+
+.carousel-item
+  list-style-type: none
+  background: green
 
 
