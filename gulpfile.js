@@ -16,25 +16,25 @@ const rename       = require('gulp-rename');
 const reload       = browserSync.reload;
 
 const paths  = {
-    css     : ['src/style/minCss/main.css'],
-    styl    : ['src/style/main.styl'],
-    script  : ['src/scripts/coffee/script.coffee'],
-    pug     : ['src/template/index.pug'],
-    img     : ['src/image/*.{png,jpg,jpeg,gif,svg}'],
+    css       : ['src/style/minCss/main.css'],
+    styl      : ['src/style/main.styl', 'src/style/**/*.styl'],
+    script    : ['src/scripts/coffee/script.coffee'],
+    pug       : ['src/template/index.pug', 'src/template/chancks/*.pug'],
+    img       : ['src/image/**/*.{png,jpg,jpeg,gif,svg}'],
 } 
 
-// gulp.task('browserSync', function() {
-//     browserSync({
-//       server: {
-//         baseDir: "./"
-//       },
-//       port: 8000,
-//       open: true,
-//       notify: false });
-// });
+gulp.task('browserSync', function() {
+    browserSync({
+      server: {
+        baseDir: "./"
+      },
+      port: 8000,
+      open: true,
+      notify: false });
+});
 
 gulp.task('stylus', function(){
-    return gulp.src(paths.styl)
+    return gulp.src(paths.styl, paths.temp_styl)
     .pipe(stylus())
     .pipe(autoprefixer({
         browsers: ['last 2 versions'],
@@ -43,7 +43,7 @@ gulp.task('stylus', function(){
     .pipe(minify())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('src/style'))
-    // .pipe(reload({stream:true}))
+    .pipe(reload({stream:true}))
     // .pipe(notify('Done! master killer code.'));
 });
 
@@ -53,11 +53,11 @@ gulp.task('scripts', function(){
     .pipe(uglify())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('src/scripts/js'))
-    // .pipe(reload({streame:true}));
+    .pipe(reload({streame:true}));
 });
 
 gulp.task('pug', function(){
-    return gulp.src(paths.pug)
+    return gulp.src(paths.pug, paths.temp_pug)
     .pipe(pug())
     .pipe(gulp.dest(''))
     // .pipe(reload({streame:true}));
@@ -76,4 +76,4 @@ gulp.task('watcher', function(){
     // gulp.watch(paths.img, ['imgmin']);
 });
 
-gulp.task('default', ['watcher']);
+gulp.task('default', ['watcher', 'browserSync']);
