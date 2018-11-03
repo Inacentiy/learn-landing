@@ -1,39 +1,32 @@
-body
-  background: grey;
-  margin: 0
-  padding: 0
-  font-family: sans-serif
-  color: white
+@import 'utilities/_utilities.styl'
+@import 'base/_base.styl'
+@import 'layout/_layout.styl'
 
-header 
-  display: flex
-  flex-direction: row
-  width: 80%
-  margin: 2% auto
-  padding: 0 2%
+.wrapper-header
+  background: --o_white
+
+.nav-group
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+.header-menu
+  menu(15px)
+
+.header-nav-item
+  menu-item(--text-black, --text-red)
+
+footer
+  background: --o_black
+
+.footer-menu
+  menu(15px)
+
+.footer-nav-item
+  menu-item(white, --text-red)
+
+.carousel-item
+  list-style-type: none
   background: black
 
-nav 
-  line-height: 0
 
-nav > ul
-  display: flex
-  flex-direction: row
-
-.nav-item
-  font-size: 13px
-  text-decoration: none 
-  color: white
-  text-transform: uppercase
-  &:hover
-    letter-spacing: -0.8px
-    font-weight: 700
-    animation: nav-hover 0.5s ease-out 1 forwards
-
-@keyframes nav-hover
-  from 
-    color: yellow
-    font-size: 14px
-  to   
-    color: green
-    font-size: 14px

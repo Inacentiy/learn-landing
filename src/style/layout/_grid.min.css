@@ -1,0 +1,1 @@
+.conteiner{display:grid;grid-template-rows:.25fr 2fr 1fr 1.5fr .5fr;grid-gap:4vw;max-width:90%;margin:auto}.carousel{display:grid;grid-template-rows:1fr 1fr;grid-template-columns:1fr 1fr 1fr;grid-gap:1vw}

@@ -1,15 +1,20 @@
 section.wrapper-header
     header
-        div.top-logo MoGo
-        nav
-            ul
-                ol
-                    a(href="#").nav-item about
-                ol
-                    a(href="#").nav-item service
-                ol
-                    a(href="#").nav-item work
-                ol
-                    a(href="#").nav-item blog
-                ol
-                    a(href="#").nav-item contact
+        aside.nav-group
+            div.top-logo
+                a(href="#") lemon
+            nav
+                ul.header-menu
+                    ol
+                        a(href="#").header-nav-item home
+                    ol
+                        a(href="#").header-nav-item recpes
+                    ol
+                        a(href="#").header-nav-item photo galleries
+                    ol
+                        a(href="#").header-nav-item videos
+                    ol
+                        a(href="#").header-nav-item all categories
+            form.search
+                input(type="text" plaeholder="search")
+                button(type="submit")    

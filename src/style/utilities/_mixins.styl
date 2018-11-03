@@ -1,0 +1,22 @@
+title-article(color, size)
+    font-weight: bold
+    font-style: italic
+    font-family: fonts
+    font-size: size
+    color: color
+    line-height: size + 50%
+
+menu(size)
+    display: flex
+    flex-flow: row nowrap
+    font-family: fonts
+    font-size: size 
+    line-height: size * 2
+    justify-content: space-around
+
+menu-item(color, hover-color)
+    text-decoration: none 
+    color: color
+    text-transform: uppercase
+    &:hover
+        color:hover-color
